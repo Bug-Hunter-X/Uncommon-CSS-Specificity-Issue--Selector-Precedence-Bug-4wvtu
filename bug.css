@@ -1,0 +1,18 @@
+The following CSS code snippet exhibits an uncommon error related to the specificity of selectors:
+
+```css
+.container {
+  width: 500px;
+}
+
+#myElement {
+  width: 300px;
+}
+
+.container #myElement {
+  width: 400px;
+}
+
+```
+
+The expected behavior is that `#myElement` within the `.container` should have a width of 400px, due to the more specific selector `.container #myElement`.  However, in some cases, the browser might incorrectly apply the `width: 300px` rule from the `#myElement` selector, ignoring the more specific rule. This is an uncommon bug because the specificity rules are well-defined, but certain browser implementations or CSS preprocessors may lead to these issues.
